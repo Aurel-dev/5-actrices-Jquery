@@ -41,7 +41,6 @@ header > h1{
     height: 500px;
     overflow: hidden;
     position: relative; /* cache le surplus qui depasse du main menu*/
-    margin-bottom: 300px;
 }
 
 .bw{
@@ -118,4 +117,45 @@ header > h1{
     color: black;
     text-align: center;
     font-family: 'Lobster', cursive;
+}
+
+/* BUTTONS MENU*/
+
+#buttons-menu{
+    float: left;
+    width: 100%;
+    padding: 170px 0 50px 0;
+}
+
+#buttons-menu ul{
+    float: left;
+    position: relative;
+    left: 50%;
+    text-align: center;
+}
+
+.button{
+    float: left;
+    width: 150px;
+    margin-left: 30px;
+    padding: 10px 0px;
+    position: relative;
+    right: 50%;
+    text-shadow: 1px 1px 1px black;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    color: darkgrey;
+    border-radius: 8px;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.75);
+    background: darkred;
+    border: 2px solid darkgrey;
+    cursor: pointer;
+    opacity: 0.9;
+    font-size: 18px;
+}
+
+.hovered{
+    background: darkgrey;
+    color: darkred;
+    font-size: 24px;
 }

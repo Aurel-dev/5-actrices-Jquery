@@ -11,36 +11,28 @@ $(function(){
             }
     },
 
-    bindEvents = function(){
-        $mainMenuItems.children(".images").click(function(){ //clic possible pour tous les éléments de la classe "images"
-        //element sur lequel je viens de cliquer
-        var newIndex = $(this).parent().index(), //utilisation "," et non ";" donc pas besoin de var
-        // le "li" cliqué, obtention de l'index puis prise de tous les "li"
-        
-        $item = $mainMenuItems.eq(newIndex);
-        if(openedIndex === newIndex){  //fermeture
-            animateItem($item, false, 250);
-            openedIndex = -1;
-        } else {
-            if(validIndex(newIndex)){  //ouverture fermeture
-                animateItem($mainMenuItems.eq(openedIndex), false, 250); //fermeture de la photo specifique
-                openedIndex = newIndex;
-                animateItem($item, true, 250);
+        bindEvents = function(){
+            $mainMenuItems.children(".images").click(function(){ //clic possible pour tous les éléments de la classe "images"
+            //element sur lequel je viens de cliquer
+                var newIndex = $(this).parent().index();
+                checkAndAnimateItem(newIndex);
+            });
+
+            $(".button").hover(
+            function(){ //je rentre sur mon bouton
+                $(this).addClass("hovered");
+            },
+            function(){
+                $(this).removeClass("hovered");
             }
-        }
-        
-        /*Remplacement du code ci-dessous par code ci-dessus
+            );
 
-        -->affiche le bg color de la photo
-        $colorImage = $item.find(".color");
-        -->bg color change de position et se met à la place de bw
-        $colorImage.animate({left:"0px"}, 250);
-        -->description agrandissement
-        $item.animate({width: "420px"}, 250); */
+            $(".button").click(function(){
+                var newIndex = $(this).index(); //va donner l'index de mon bouton
+                checkAndAnimateItem(newIndex); 
+            });
 
-
-    });
-    }
+        },
 
     validIndex = function(indexToCheck){ //verification supplementaire
         return (indexToCheck >= 0) && (indexToCheck < totalMainMenuItems) //les 5 stars
@@ -53,6 +45,19 @@ $(function(){
             colorImageParam = toOpen ? {left: "0px"} : {left : "140px"};
             $colorImage.animate(colorImageParam, speed);
             $item.animate(itemParam, speed);
+    },
+
+    checkAndAnimateItem = function(indexToCheckAndAnimate){
+            if(openedIndex === indexToCheckAndAnimate){  //fermeture
+                animateItem($mainMenuItems.eq(indexToCheckAndAnimate), false, 250);
+                openedIndex = -1;
+            } else {
+                if(validIndex(indexToCheckAndAnimate)){  //ouverture fermeture
+                    animateItem($mainMenuItems.eq(openedIndex), false, 250); //fermeture de la photo specifique
+                    openedIndex = indexToCheckAndAnimate;
+                    animateItem($mainMenuItems.eq(openedIndex), true, 250);
+                }
+            }
     };
 
     init();
