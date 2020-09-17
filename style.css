@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol{ 
+    list-style: none; 
+}
+
+body{
+    background: #bfbfbf url(images/background.jpg) repeat-x;
+    font-family: Arial, sans-serif;
+}
+
+header{
+    padding: 30px 0;
+}
+
+header > h1{
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px black;
+    font-family: 'Aclonica', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* MAIN MENU*/
+
+#main-menu ul{   /* redimension de l'image de bg*/
+    width: 980px;
+    height: 500px;
+    margin: 0 auto;
+    padding-top: 151px;
+}
+
+#main-menu > ul > li{
+    float: left;
+    width: 140px;
+    height: 500px;
+    overflow: hidden;
+    position: relative; /* cache le surplus qui depasse du main menu*/
+    margin-bottom: 300px;
+}
+
+.bw{
+    width: 140px; /* Les dimensions correspondent à l'image de Scarlett*/ 
+    left: 0px;
+    height: 500px;
+    cursor: pointer; /*changer le curseur avec la main*/
+    background: url("images/bw-image.jpg");
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    position: absolute;
+}
+
+.color{
+    width: 140px;
+    left: 140px; 
+    height: 500px;
+    cursor: pointer; /*changer le curseur avec la main*/
+    background: url("images/color-image.jpg");
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+#part2 > div{ 
+    background-position: -140px 0px; /* décaler pour avoir l'image suivante */ 
+}
+
+#part3 > div{ 
+    background-position: -280px 0px; /* décaler pour avoir l'image suivante */ 
+}
+
+#part4 > div{ 
+    background-position: -420px 0px; /* décaler pour avoir l'image suivante */ 
+}
+
+#part5 > div{ 
+    background-position: -560px 0px; /* décaler pour avoir l'image suivante */ 
+}
+
+.description{
+    width: 240px;
+    height: 460px;
+    padding: 20px;
+    background: white;
+    left: 140px;
+    position: absolute;
+}
+
+.description > h2{
+    padding-top: 20px;
+    font-size: 30px;
+    text-align: center;
+    color: darkgrey;
+    text-transform: uppercase;
+    font-family: 'Aclonica', sans-serif;
+    letter-spacing: 1px;
+}
+
+.description > h3{
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 26px;
+    background: darkred;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    border-radius: 8px;
+    font-family: 'Lobster', cursive;
+}
+
+.description > p{
+    padding-top: 35px;
+    font-size: 22px;
+    color: black;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+}
